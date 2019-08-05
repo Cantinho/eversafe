@@ -9,7 +9,7 @@ type User {
 }
 
 type Query {
-  todos: [User!]!
+  users: [User!]!
 }
 
 input NewUser {

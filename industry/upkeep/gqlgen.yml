@@ -6,17 +6,13 @@
 schema:
 - schema.graphql
 exec:
-  filename: generated/generated.go
+  filename: generated.go
 model:
-  filename: models/user.go
+  filename: models_gen.go
 resolver:
   filename: resolver.go
   type: Resolver
-autobind:
-  - github.com/samirtf/eversafe/industry/upkeep/models
-models:
-  User:
-    model: github.com/samirtf/eversafe/industry/upkeep/models.User
+autobind: []
 # Comment directives block before run 'go run github.com/99designs/gqlgen'
 #directives:
 #  deprecated:
