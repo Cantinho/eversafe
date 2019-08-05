@@ -3,15 +3,32 @@
 # Refer to https://gqlgen.com/config/
 # for detailed .gqlgen.yml documentation.
 
+# You can pass a single schema file
 schema:
 - schema.graphql
+
+# Or multiple files
+#- schema.graphql
+#- anotherschema.graphql
+
+# Let gqlgen know where to put the generated server
 exec:
-  filename: generated.go
+  filename: generated/generated.go
+  package: generated
+
+# Let gqlgen know where to put the generated models (if any)
 model:
-  filename: models_gen.go
+  filename: models/models_gen.go
+  package: models
+
+# Optional, turns on resolver stub generation
 resolver:
-  filename: resolver.go
+  filename: resolver/resolver.go
   type: Resolver
+
+# Optional, turns on binding to field names by tag provided
+struct_tag: json
+
 autobind: []
 # Comment directives block before run 'go run github.com/99designs/gqlgen'
 #directives:
