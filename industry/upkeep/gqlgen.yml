@@ -16,7 +16,7 @@ autobind:
   - github.com/eversafe/industry/upkeep/models
 models:
   User:
-    model: github.com/eversafe/industry/upkeep/models.User
+    model: github.com/samirtf/eversafe/industry/upkeep/models.User
 # Comment directives block before run 'go run github.com/99designs/gqlgen'
 #directives:
 #  deprecated:
