@@ -13,6 +13,7 @@ resolver:
   filename: resolver.go
   type: Resolver
 autobind: []
+# Comment directives block before run 'go run github.com/99designs/gqlgen'
 directives:
   deprecated:
     skip_runtime: true
