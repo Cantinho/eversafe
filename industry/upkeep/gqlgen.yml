@@ -6,18 +6,22 @@
 schema:
 - schema.graphql
 exec:
-  filename: generated.go
+  filename: generated/generated.go
 model:
-  filename: models_gen.go
+  filename: models/user.go
 resolver:
   filename: resolver.go
   type: Resolver
-autobind: []
+autobind:
+  - github.com/eversafe/industry/upkeep/models
+models:
+  User:
+    model: github.com/eversafe/industry/upkeep/models.User
 # Comment directives block before run 'go run github.com/99designs/gqlgen'
-directives:
-  deprecated:
-    skip_runtime: true
-  include:
-    skip_runtime: true
-  skip:
-    skip_runtime: true
+#directives:
+#  deprecated:
+#    skip_runtime: true
+#  include:
+#    skip_runtime: true
+#  skip:
+#    skip_runtime: true

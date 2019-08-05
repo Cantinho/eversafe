@@ -15,12 +15,12 @@ func (r *Resolver) Query() QueryResolver {
 
 type mutationResolver struct{ *Resolver }
 
-func (r *mutationResolver) CreateTodo(ctx context.Context, input NewTodo) (*Todo, error) {
+func (r *mutationResolver) CreateUser(ctx context.Context, input NewUser) (*User, error) {
 	panic("not implemented")
 }
 
 type queryResolver struct{ *Resolver }
 
-func (r *queryResolver) Todos(ctx context.Context) ([]*Todo, error) {
+func (r *queryResolver) Users(ctx context.Context) ([]*User, error) {
 	panic("not implemented")
 }
