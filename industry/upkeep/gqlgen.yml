@@ -13,7 +13,7 @@ resolver:
   filename: resolver.go
   type: Resolver
 autobind:
-  - github.com/eversafe/industry/upkeep/models
+  - github.com/samirtf/eversafe/industry/upkeep/models
 models:
   User:
     model: github.com/samirtf/eversafe/industry/upkeep/models.User
