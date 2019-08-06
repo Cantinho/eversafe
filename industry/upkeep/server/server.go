@@ -6,6 +6,12 @@ package main
  * go run server/server.go
  *
  * Resolvers isn't auto generated after gqlgen.
+ *
+ * There are a few options as described in the testing flags docs:
+ *
+ * go clean -testcache: expires all test results
+ * use non-cacheable flags on your test run. The idiomatic way is to use -count=1
+ *
  */
 
 import (
@@ -139,6 +145,7 @@ func main() {
 	log.Printf("connect to http://localhost:%s/ for GraphQL playground handling by Gin", port)
 	router.Run(":" + port)
 }
+
 
 //func main() {
 //	port := os.Getenv("PORT")
