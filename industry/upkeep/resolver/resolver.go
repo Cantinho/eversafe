@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"math/rand"
+	"strings"
 	"upkeep/generated"
 	"upkeep/models"
 )
@@ -15,40 +16,48 @@ type Resolver struct {
 	users []*models.User
 }
 
-func (r *Resolver) Mutation() generated.MutationResolver {
-	return &mutationResolver{r}
+func (resolver *Resolver) Mutation() generated.MutationResolver {
+	return &mutationResolver{resolver}
 }
-func (r *Resolver) Query() generated.QueryResolver {
-	return &queryResolver{r}
+func (resolver *Resolver) Query() generated.QueryResolver {
+	return &queryResolver{resolver}
 }
 
 type mutationResolver struct{ *Resolver }
 
-func (r *mutationResolver) CreateUser(ctx context.Context, input models.NewUser) (*models.User, error) {
+func (resolver *mutationResolver) CreateUser(ctx context.Context, input models.NewUser) (*models.User, error) {
 	user := &models.User{
 		ID:    fmt.Sprintf("T%d", rand.Int()),
 		Name:  input.Name,
 		Email: input.Email,
 	}
-	r.users = append(r.users, user)
+	resolver.users = append(resolver.users, user)
 	return user, nil
 }
 
 type queryResolver struct{ *Resolver }
 
-func (r *queryResolver) Users(ctx context.Context) ([]*models.User, error) {
+func (resolver *queryResolver) Users(ctx context.Context) ([]*models.User, error) {
 	_, err := GinContextFromContext(ctx)
 	if err != nil {
 		return nil, err
 	}
-	return r.users, nil
+	return resolver.users, nil
 }
+func (resolver *queryResolver) User(ctx context.Context, email *string) ([]*models.User, error) {
+	_, err := GinContextFromContext(ctx)
+	if err != nil {
+		return nil, err
+	}
+	var result []*models.User
+	for _, v := range resolver.users {
+		if strings.EqualFold(v.Email, *email) {
+			result = append(result, v)
+		}
+	}
+	return result, nil
 
-//type userResolver struct{ *Resolver }
-//
-//func (r *userResolver) User(ctx context.Context, obj *models.User) (*models.User, error) {
-//	return &models.User{ID: obj.ID, Name: "name " + obj.Name, Email: "email " + obj.Email}, nil
-//}
+}
 
 // Define a function to recover the gin.Context from the context.Context struct
 func GinContextFromContext(ctx context.Context) (*gin.Context, error) {

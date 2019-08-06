@@ -55,6 +55,35 @@ func playgroundHandler() gin.HandlerFunc {
 	}
 }
 
+//
+// Example of an extended ansi-colored logger using the
+// ctx.Writer.Status() function
+func logger(c *gin.Context) {
+	start := time.Now()
+
+	// save the IP of the requester
+	requester := c.Request.Header.Get("X-Real-IP")
+
+	// if the requester-header is empty, check the forwarded-header
+	if requester == "" {
+		requester = c.Request.Header.Get("X-Forwarded-For")
+	}
+
+	// if the requester is still empty, use the hard-coded address from the socket
+	if requester == "" {
+		requester = c.Request.RemoteAddr
+	}
+
+	// ... finally, log the fact we got a request
+	log.Printf("<-- %16s | %6s | %s\n", requester, c.Request.Method, c.Request.URL.Path)
+
+	c.Next()
+
+	log.Printf("--> %16s | %6d | %s | %s\n",
+		requester, c.Writer.Status(), time.Since(start), c.Request.URL.Path,
+	)
+}
+
 func main() {
 	// Setting up Gin
 	// router := gin.Default() creates a default middleware.
@@ -89,6 +118,9 @@ func main() {
 	}))
 
 	router.Use(gin.Logger())
+
+	// Use custom logger to capture requester.
+	//router.Use(logger)
 
 	// Recovery middleware recovers from any panics and writes a 500 if there was one.
 	router.Use(gin.Recovery())
