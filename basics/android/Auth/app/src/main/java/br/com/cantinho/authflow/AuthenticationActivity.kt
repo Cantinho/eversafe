@@ -62,7 +62,9 @@ class AuthenticationActivity : AppCompatActivity() {
         try {
             AWSMobileClient.getInstance().showSignIn(
                 this,
-                SignInUIOptions.builder().nextActivity(MainActivity::class.java).build()
+                SignInUIOptions.builder()
+                    .logo(R.drawable.ic_helmet_green)
+                    .nextActivity(MainActivity::class.java).build()
             )
         } catch (e: Exception) {
             Log.e(TAG, e.toString())

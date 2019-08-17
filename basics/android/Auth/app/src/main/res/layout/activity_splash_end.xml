@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/splashscreen"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:showPaths="true"
+        app:layoutDescription="@xml/scene_splashscreen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".SplashActivity">
+
+    <View android:layout_width="match_parent" android:layout_height="match_parent"
+          android:background="@color/gray_900" android:id="@+id/root"/>
+
+    <TextView
+            android:text="Eversafe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fullscreen_content"
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="@font/crete_round"
+            android:textSize="36sp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintTop_toBottomOf="@+id/logo"/>
+
+        <ImageView
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                app:srcCompat="@drawable/ic_helmet_green"
+                android:id="@+id/logo"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="0.378"/>
+
+        <TextView
+                android:text="Sign in to continue"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/subtitle"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/fullscreen_content"
+                app:layout_constraintStart_toStartOf="@+id/fullscreen_content"/>
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
