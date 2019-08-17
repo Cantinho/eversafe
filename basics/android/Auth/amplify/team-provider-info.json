@@ -9,6 +9,18 @@
             "UnauthRoleName": "auth-dev-20190816224412-unauthRole",
             "StackName": "auth-dev-20190816224412",
             "StackId": "arn:aws:cloudformation:us-east-1:834881949119:stack/auth-dev-20190816224412/83bd36b0-c090-11e9-ad84-0a9f1235b826"
+        },
+        "categories": {
+            "function": {
+                "auth298945eaCustomMessage": {
+                    "REDIRECTURL": "https://localhost:19000/",
+                    "EMAILSUBJECT": "Eversafe Auth account confirmation",
+                    "EMAILMESSAGE": "Welcome to Eversafe Auth"
+                }
+            },
+            "auth": {
+                "auth298945ea": {}
+            }
         }
     }
 }
