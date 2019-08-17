@@ -27,42 +27,6 @@ class SplashActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         mVisible = true
-
-//        //Add a TransitionListener to the motionLayout_container//
-//        splashscreen.setTransitionListener(
-//            object: MotionLayout.TransitionListener {
-//                override fun onTransitionTrigger(p0: MotionLayout?, p1: Int, p2: Boolean, p3: Float) {
-//                }
-//
-//                override fun onTransitionStarted(p0: MotionLayout?, p1: Int, p2: Int) {
-//                    fullscreen_content.text = "Eversafe"
-//                }
-//                //Implement the onTransitionChange abstract method//
-//
-//                override fun onTransitionChange(motionLayout: MotionLayout?,
-//                                                startId: Int,
-//                                                endId: Int,
-//                                                progress: Float) {
-//                    //Print each floating-point number to Logcat//
-//                    if(progress == 0F) {
-//                        fullscreen_content.text = "Eversafe"
-//                    }
-//                    Log.d("TAG", "Progress:" + progress)
-//                }
-//
-//                //Implement the onTransitionCompleted method//
-//
-//                override fun onTransitionCompleted(motionLayout: MotionLayout?,
-//                                                   currentId: Int) {
-//                    //If our button is in the ending_set position...//
-//
-//                    if(currentId == R.id.start) {
-//                        //...then move it back to the starting position//
-//                        splashscreen.transitionToEnd()
-//                    }
-//                }
-//            }
-//        )
     }
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
