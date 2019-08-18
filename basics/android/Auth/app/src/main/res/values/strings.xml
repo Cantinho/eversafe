@@ -4,4 +4,10 @@
     <string name="title_activity_splash">SplashActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="login_button">Login</string>
+    <string name="sign_up_text">Sign up</string>
+    <string name="forgot_password_text">Forgot Password?</string>
+    <string name="sign_in_to_continue_text">Sign in to continue!</string>
+    <string name="password_hint_text">Password</string>
+    <string name="email_hint_text">Email</string>
 </resources>

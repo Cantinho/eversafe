@@ -27,7 +27,7 @@
                     android:id="@+id/root">
                 <CustomAttribute
                         motion:attributeName="backgroundColor"
-                        motion:customColorValue="@color/gray_900" />
+                        motion:customColorValue="@color/gray_900"/>
             </Constraint>
             <Constraint
                     android:layout_width="128dp"
@@ -41,8 +41,8 @@
                     motion:layout_constraintBottom_toBottomOf="parent"
                     motion:layout_constraintVertical_bias="0.378">
                 <!--<CustomAttribute-->
-                        <!--motion:attributeName="BackgroundColor"-->
-                        <!--motion:customColorValue="#D81B60"/>-->
+                <!--motion:attributeName="BackgroundColor"-->
+                <!--motion:customColorValue="#D81B60"/>-->
             </Constraint>
             <Constraint
                     android:text="Eversafe"
@@ -66,14 +66,100 @@
                         motion:customStringValue="Eversafe"/>
             </Constraint>
             <Constraint
-                android:text="Sign in to continue"
-                android:textColor="@color/colorPrimary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/subtitle"
-                android:visibility="gone"
-                motion:layout_constraintTop_toBottomOf="@+id/fullscreen_content"
-                motion:layout_constraintStart_toStartOf="@+id/fullscreen_content">
+                    android:text="Sign in to continue"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/subtitle"
+                    android:visibility="gone"
+                    motion:layout_constraintTop_toBottomOf="@+id/fullscreen_content"
+                    motion:layout_constraintStart_toStartOf="@+id/fullscreen_content">
+            </Constraint>
+
+            <Constraint
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewSkip"
+                    android:visibility="gone"
+                    motion:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="8dp"
+                    motion:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="32dp"
+                    motion:layout_constraintBottom_toBottomOf="@+id/root">
+            </Constraint>
+            <Constraint
+                    android:text="@string/login_button"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:id="@+id/buttonLogin"
+                    android:visibility="gone"
+                    android:layout_marginBottom="32dp"
+                    motion:layout_constraintBottom_toTopOf="@+id/textViewSkip"
+                    motion:layout_constraintStart_toStartOf="@+id/subtitle"
+                    motion:layout_constraintEnd_toEndOf="@+id/fullscreen_content"
+                    android:layout_marginEnd="8dp"
+                    android:textAllCaps="false"
+                    android:background="@color/colorPrimaryDark"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:layout_marginStart="8dp">
+            </Constraint>
+            <Constraint
+                    android:text="@string/sign_up_text"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewSignUp"
+                    motion:layout_constraintStart_toStartOf="@+id/fullscreen_content"
+                    android:layout_marginBottom="60dp"
+                    motion:layout_constraintBottom_toTopOf="@+id/buttonLogin">
+            </Constraint>
+            <Constraint
+                    android:text="@string/forgot_password_text"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewForgotPassword"
+                    motion:layout_constraintEnd_toEndOf="@+id/fullscreen_content"
+                    android:layout_marginBottom="60dp"
+                    motion:layout_constraintBottom_toTopOf="@+id/buttonLogin">
+            </Constraint>
+            <Constraint
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    motion:layout_constraintBottom_toTopOf="@+id/textViewSignUp"
+                    motion:layout_constraintStart_toStartOf="@+id/fullscreen_content"
+                    motion:layout_constraintEnd_toEndOf="@+id/fullscreen_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:id="@+id/textInputLayoutPassword">
+            </Constraint>
+            <Constraint
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/password_hint_text">
+            </Constraint>
+            <Constraint
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    motion:layout_constraintStart_toStartOf="@+id/fullscreen_content"
+                    motion:layout_constraintEnd_toEndOf="@+id/fullscreen_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="50dp"
+                    motion:layout_constraintBottom_toTopOf="@+id/textInputLayoutPassword"
+                    android:id="@+id/textInputLayoutEmail">
+            </Constraint>
+            <Constraint
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/email_hint_text">
             </Constraint>
 
         </ConstraintSet>
@@ -83,7 +169,7 @@
                     android:id="@+id/root">
                 <CustomAttribute
                         motion:attributeName="backgroundColor"
-                        motion:customColorValue="#FFFFFF" />
+                        motion:customColorValue="#FFFFFF"/>
             </Constraint>
             <Constraint
                     android:layout_width="90dp"
@@ -98,17 +184,17 @@
                     motion:layout_constraintVertical_bias="0.08"
                     motion:layout_constraintHorizontal_bias="0.498">
                 <!--<CustomAttribute-->
-                        <!--motion:attributeName="BackgroundColor"-->
-                        <!--motion:customColorValue="#9999FF"/>-->
+                <!--motion:attributeName="BackgroundColor"-->
+                <!--motion:customColorValue="#9999FF"/>-->
             </Constraint>
             <Constraint
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/fullscreen_content"
                     motion:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginEnd="8dp"
+                    android:layout_marginEnd="24dp"
                     motion:layout_constraintStart_toStartOf="parent"
-                    android:layout_marginStart="8dp"
+                    android:layout_marginStart="24dp"
                     android:layout_marginTop="8dp"
                     android:textColor="@color/colorPrimary"
                     android:fontFamily="@font/crete_round"
@@ -118,8 +204,8 @@
                     motion:layout_constraintVertical_bias="0.294"
                     motion:layout_constraintHorizontal_bias="0.073">
                 <CustomAttribute
-                    motion:attributeName="Text"
-                    motion:customStringValue="We are safe together!"/>
+                        motion:attributeName="Text"
+                        motion:customStringValue="We are safe together!"/>
             </Constraint>
             <Constraint
                     android:text="Sign in to continue"
@@ -131,6 +217,94 @@
                     motion:layout_constraintTop_toBottomOf="@+id/fullscreen_content"
                     motion:layout_constraintStart_toStartOf="@+id/fullscreen_content">
             </Constraint>
+
+            <Constraint
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewSkip"
+                    android:visibility="visible"
+                    motion:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="8dp"
+                    motion:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="32dp"
+                    motion:layout_constraintBottom_toBottomOf="@+id/root">
+            </Constraint>
+            <Constraint
+                    android:text="@string/login_button"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:id="@+id/buttonLogin"
+                    android:visibility="visible"
+                    android:layout_marginBottom="32dp"
+                    motion:layout_constraintBottom_toTopOf="@+id/textViewSkip"
+                    motion:layout_constraintStart_toStartOf="@+id/subtitle"
+                    motion:layout_constraintEnd_toEndOf="@+id/fullscreen_content"
+                    android:layout_marginEnd="8dp"
+                    android:textAllCaps="false"
+                    android:background="@color/colorPrimaryDark"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:layout_marginStart="8dp">
+            </Constraint>
+            <Constraint
+                    android:text="@string/sign_up_text"
+                    android:visibility="visible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewSignUp"
+                    motion:layout_constraintStart_toStartOf="@+id/fullscreen_content"
+                    android:layout_marginBottom="60dp"
+                    motion:layout_constraintBottom_toTopOf="@+id/buttonLogin">
+            </Constraint>
+            <Constraint
+                    android:text="@string/forgot_password_text"
+                    android:visibility="visible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewForgotPassword"
+                    motion:layout_constraintEnd_toEndOf="@+id/fullscreen_content"
+                    android:layout_marginBottom="60dp"
+                    motion:layout_constraintBottom_toTopOf="@+id/buttonLogin">
+            </Constraint>
+            <Constraint
+                    android:visibility="visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    motion:layout_constraintBottom_toTopOf="@+id/textViewSignUp"
+                    motion:layout_constraintStart_toStartOf="@+id/fullscreen_content"
+                    motion:layout_constraintEnd_toEndOf="@+id/fullscreen_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:id="@+id/textInputLayoutPassword">
+            </Constraint>
+            <Constraint
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/password_hint_text">
+            </Constraint>
+            <Constraint
+                    android:visibility="visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    motion:layout_constraintStart_toStartOf="@+id/fullscreen_content"
+                    motion:layout_constraintEnd_toEndOf="@+id/fullscreen_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="50dp"
+                    motion:layout_constraintBottom_toTopOf="@+id/textInputLayoutPassword"
+                    android:id="@+id/textInputLayoutEmail">
+            </Constraint>
+            <Constraint
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/email_hint_text">
+            </Constraint>
+
+
         </ConstraintSet>
 
         <KeyFrameSet>
