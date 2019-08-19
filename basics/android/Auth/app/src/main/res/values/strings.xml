@@ -10,4 +10,15 @@
     <string name="sign_in_to_continue_text">Sign in to continue!</string>
     <string name="password_hint_text">Password</string>
     <string name="email_hint_text">Email</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="title_authentication_fragment">Authentication fragment</string>
+    <string name="title_code_confirmation_fragment">Code Confirmation fragment</string>
+    <string name="title_forgot_password_fragment">Forgot Password fragment</string>
+    <string name="title_home_fragment">Home fragment</string>
+    <string name="title_sign_up_fragment">Sign Up fragment</string>
+    <string name="btnGoToHome">Go To Home</string>
+    <string name="btnGoToSignUp">Go To Sign Up</string>
+    <string name="btnGoToForgotPassword">Go To Forgot Password</string>
+    <string name="btnGoToCodeConfirmation">Go To Code Confirmation</string>
 </resources>

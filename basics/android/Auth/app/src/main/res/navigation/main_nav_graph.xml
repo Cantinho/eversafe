@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/main_nav_graph"
+            app:startDestination="@id/authenticationFragment">
+
+    <fragment android:id="@+id/authenticationFragment" android:name="br.com.cantinho.authflow.AuthenticationFragment"
+              android:label="fragment_authentication" tools:layout="@layout/fragment_authentication">
+        <action android:id="@+id/actionToHome" app:destination="@id/homeFragment"/>
+        <action android:id="@+id/actionToSignUp" app:destination="@id/signUpFragment"/>
+        <action android:id="@+id/actionToForgotPassword" app:destination="@id/forgotPasswordFragment"/>
+    </fragment>
+
+    <fragment android:id="@+id/homeFragment" android:name="br.com.cantinho.authflow.HomeFragment"
+              android:label="fragment_home" tools:layout="@layout/fragment_home"/>
+
+    <fragment android:id="@+id/signUpFragment" android:name="br.com.cantinho.authflow.SignUpFragment"
+              android:label="fragment_sign_up" tools:layout="@layout/fragment_sign_up">
+        <action android:id="@+id/actionToCodeConfirmation" app:destination="@id/codeConfirmationFragment"/>
+    </fragment>
+
+    <fragment android:id="@+id/codeConfirmationFragment"
+              android:name="br.com.cantinho.authflow.CodeConfirmationFragment"
+              android:label="fragment_code_confirmation" tools:layout="@layout/fragment_code_confirmation"/>
+
+    <fragment android:id="@+id/forgotPasswordFragment" android:name="br.com.cantinho.authflow.ForgotPasswordFragment"
+              android:label="fragment_forgot_password" tools:layout="@layout/fragment_forgot_password">
+        <action android:id="@+id/actionToCodeConfirmation" app:destination="@id/codeConfirmationFragment"/>
+    </fragment>
+</navigation>
